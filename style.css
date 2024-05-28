@@ -1,0 +1,112 @@
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container {
+  height: 100vh;
+  background-color: #7dd3fc;
+}
+
+.calculator {
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 20rem;
+  height: 32rem;
+  margin: 0 auto;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+}
+
+.result__list {
+  position: absolute;
+  background-color: #000000;
+  height: 0;
+  width: 20rem;
+  -webkit-transition: 0.7s linear;
+  transition: 0.7s linear;
+}
+.result__list.move {
+  height: 100px;
+}
+
+.historyLine {
+  width: 25%;
+  height: 0.2rem;
+  background-color: #94a3b8;
+  margin: 0 auto;
+  border-radius: 0.2rem;
+  cursor: pointer;
+}
+.historyLine:hover {
+  -webkit-transform: scaleX(1.2);
+      -ms-transform: scaleX(1.2);
+          transform: scaleX(1.2);
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.resCon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  height: 25%;
+  padding: 0 0.5rem;
+}
+.resCon .result {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 1.8rem;
+}
+
+.btnCon {
+  height: 71%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.4rem;
+  padding: 0.7rem;
+}
+.btnCon .btn {
+  font-size: 1.3rem;
+  width: 4rem;
+  border-radius: 1rem;
+  border: none;
+  background-color: #ffffff;
+  cursor: pointer;
+  -webkit-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+.btnCon .btn:hover {
+  color: #94a3b8;
+}
+.btnCon .btn.blue {
+  border: none;
+  background-color: #ffffff;
+  color: #38bdf8;
+}
+.btnCon .btn.blue:hover {
+  color: #bae6fd;
+}
+.btnCon .btn.fullblue {
+  background-color: #38bdf8;
+  color: #ffffff;
+  grid-row: span 2/span 2;
+}
+.btnCon .btn.fullblue:hover {
+  color: #bae6fd;
+}

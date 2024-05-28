@@ -1,0 +1,14 @@
+@import '_vars';
+
+.resCon {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    height: 25%;
+    padding: 0 0.5rem;
+    .result {
+        margin: 0;
+        color: $slate-400;
+        font-size: 1.8rem;
+    }
+}

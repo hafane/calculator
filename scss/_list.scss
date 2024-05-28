@@ -1,0 +1,12 @@
+@import '_vars';
+
+.result__list {
+    position: absolute;
+    background-color: $black;
+    height: 0;
+    width: 20rem;
+    transition: 0.7s linear;
+    &.move {
+        height: 100px;
+    }
+}
