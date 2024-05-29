@@ -4,10 +4,14 @@ import './style.css'
 
 document.querySelector('#app').innerHTML = `
 <div class='container'>
+  <div class='bg_btns'>
+    <button title='Main' class='bgchange main'>M</button>
+    <button title='Random' class='bgchange random'>R</button>
+  </div>
   <div class='calculator'>
     <div class='result__list'>
-      <ul class='list'></ul>
       <div class='historyLine'></div>
+      <ul class='list'></ul>
     </div>
     <div class='resCon'>
         <p class="result">0</p>
@@ -45,4 +49,5 @@ calc(document.querySelector('.result'),
 document.querySelector('.btnCon'), 
 document.querySelector('.list'), 
 document.querySelector('.result__list'), 
-document.querySelector('.historyLine'))
+document.querySelector('.container'),
+document.querySelector('.bg_btns'))

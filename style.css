@@ -3,11 +3,46 @@ body {
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .container {
   height: 100vh;
   background-color: #7dd3fc;
+}
+
+.bg_btns {
+  position: absolute;
+  right: 0;
+  width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+.bg_btns .bgchange {
+  padding: 0.9rem;
+  font-size: 1.3rem;
+  width: 4rem;
+  border-radius: 1rem;
+  border: none;
+  background-color: #ffffff;
+  cursor: pointer;
+  -webkit-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+.bg_btns .bgchange.random {
+  color: #000000;
+}
+.bg_btns .bgchange.main {
+  color: #38bdf8;
+}
+.bg_btns .bgchange:hover {
+  color: #94a3b8;
 }
 
 .calculator {
@@ -28,21 +63,58 @@ body {
 
 .result__list {
   position: absolute;
-  background-color: #000000;
-  height: 0;
   width: 20rem;
-  -webkit-transition: 0.7s linear;
-  transition: 0.7s linear;
 }
-.result__list.move {
-  height: 100px;
+
+.list {
+  padding: 0;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  margin: 0 auto;
+  opacity: 0;
+  height: 0;
+  max-height: 0;
+  overflow: hidden;
+  width: 100%;
+  -webkit-transition: max-height 0.5s ease, opacity 0.5s ease;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+.list.active {
+  opacity: 1;
+  height: 512px;
+  max-height: 512px;
+  overflow-y: scroll;
+}
+.list .item {
+  padding: 0 10px;
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  list-style: none;
+}
+.list .item .int {
+  font-size: 1.6rem;
+  color: #000000;
+}
+.list .item .time {
+  font-size: 1rem;
+  color: #94a3b8;
 }
 
 .historyLine {
+  position: absolute;
   width: 25%;
   height: 0.2rem;
   background-color: #94a3b8;
   margin: 0 auto;
+  left: 38%;
   border-radius: 0.2rem;
   cursor: pointer;
 }
@@ -91,9 +163,6 @@ body {
   -webkit-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
           box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
 }
-.btnCon .btn:hover {
-  color: #94a3b8;
-}
 .btnCon .btn.blue {
   border: none;
   background-color: #ffffff;
@@ -109,4 +178,7 @@ body {
 }
 .btnCon .btn.fullblue:hover {
   color: #bae6fd;
+}
+.btnCon .btn:hover {
+  color: #94a3b8;
 }

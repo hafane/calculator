@@ -7,16 +7,6 @@
     gap: 0.4rem;
     padding: 0.7rem;
     .btn {
-        font-size: 1.3rem;
-        width: 4rem;
-        border-radius: 1rem;
-        border: none;
-        background-color: $white;
-        cursor: pointer;
-        box-shadow: $shadow-md;
-        &:hover {
-            color: $slate-400;
-        }
         &.blue {
             border: none;
             background-color: $white;
@@ -33,5 +23,6 @@
                 color: $sky-200;
             }
         }
+        @include btn
     }
 }

@@ -1,0 +1,21 @@
+@import '_vars';
+
+.bg_btns {
+    position: absolute;
+    right: 0;
+    width: auto;
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    justify-content: end;
+    .bgchange {
+        padding: 0.9rem;
+        &.random {
+            color: $black;
+        }
+        &.main {
+            color: $sky-400;
+        }
+        @include btn
+    }
+}

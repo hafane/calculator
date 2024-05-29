@@ -1,4 +1,4 @@
-export function calc(p, btns, list, history, line) {
+export function calc(p, btns, list, line, main, bgbtns) {
     let first = ''
     let second = ''
     let sign = ''
@@ -92,7 +92,13 @@ export function calc(p, btns, list, history, line) {
             }
             finish = true
             p.textContent = result
-            list.innerHTML += resultArray.slice(-1)
+            const date = new Date()
+            const formatted = date.toLocaleTimeString('ru-RU', {timeStyle: 'medium'})
+            list.innerHTML += `<li class='item'>
+                    <h2 class='int'>${resultArray.slice(-1)}</h2>
+                    <p class='time'>${formatted}</p>
+                </li>
+                <hr>`
 
         }
         if(key === '+/-' && first !== '') {
@@ -119,15 +125,23 @@ export function calc(p, btns, list, history, line) {
     }
 
 
-    function toggleHistory() {
-        // history.classList.add('move')
+    function changeBG(e) {
+        let tt = e.target.textContent
+        if(!e.target.classList.contains('bgchange')) {
+            return
+        }
+        if(tt === 'M') {
+            main.removeAttribute('style')
+        }
+        if(tt === 'R') {
+            let random = '#' + Math.floor(Math.random() * 16777215).toString(16)
+            main.style.background = random
+        }
     }
 
-    // function changeBG() {
-
-    // }
-
-
-    line.addEventListener('click', toggleHistory)
+    bgbtns.addEventListener('click', changeBG)
+    line.addEventListener('click', () => {
+        list.classList.toggle('active')
+    })
     btns.addEventListener('click', calcE)
 }

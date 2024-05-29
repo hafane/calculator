@@ -1,10 +1,12 @@
 @import '_vars';
 
 .historyLine {
+    position: absolute;
     width: 25%;
     height: 0.2rem;
     background-color: $slate-400;
     margin: 0 auto;
+    left: 38%;
     border-radius: 0.2rem;
     cursor: pointer;
     &:hover {
